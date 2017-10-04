@@ -1,0 +1,239 @@
+/*  clearfix  */
+  .clearfix:after { content: "."; display: block; clear: both; visibility: hidden; line-height: 0; height: 0;}
+  .clearfix { display: inline-block; }
+  html[xmlns] .clearfix { display: block;}
+  * html .clearfix { height: 1%;}
+
+/*  layout  */
+body {
+	background: url("http://d21c7tavgjb1n4.cloudfront.net/img/paper.jpg") repeat scroll 0 0 #F6EFE1;
+	color: #333;
+	font-size: 100%;
+  font-family: 'Open Sans', sans-serif;
+	line-height: 1.5em;
+}
+
+.content a {
+	background: none repeat scroll 0 0 #FFFFFF;
+  border-bottom: 2px solid #F5DFAC;
+  color: #333333;
+  text-decoration: none;
+}
+
+.content a:hover {
+	background: #f6efe1;
+	border: none;
+}
+
+h1 {
+	font-size: 2.5em;
+  font-weight: bold;
+  line-height: 1em;
+  margin: 1.111em 0 0.3em;
+}
+
+h2 {
+  font-size: 2em;
+  font-weight: normal;
+  line-height: 1.25em;
+  margin: 1.125em 0 0.375em;
+}
+
+h3 {
+	font-weight: normal;
+}
+
+h4 {
+	font-size: 1.5em;
+  font-weight: bold;
+  line-height: 1.25em;
+}
+
+p { 
+	line-height: 1.5em;
+  margin: 0 0 1.5em;
+}
+
+.content {
+	background: #fff; 
+	margin-bottom: 20px;
+	width: 960px;
+	position: relative;
+	background: none repeat scroll 0 0 #FDF8F4;
+	margin: 3em auto;
+	text-align: left;
+	color: #333333;
+	padding: 3rem 0;
+}
+
+.content header .thumbnail { float:right; }
+
+.content header, .content .body { margin: 0 90px; }
+
+.content nav {
+  position: absolute;
+  right: 2em;
+  text-align: right;
+  top: 1rem;
+}
+
+.content nav li {
+	list-style: none outside none;
+	display: inline;
+}
+
+.content nav a {
+  margin: 0;
+  padding: 0;
+	font-size: 87.5%;
+	font-weight: bold;
+	text-transform: uppercase;
+	margin: 0 0.5em 0 0;
+  padding: 0.5em 0.75em;
+	border: none;
+	background: #FDF8F4;
+}
+
+.content nav a:hover {
+	background: #f6efe1;
+}
+
+.content nav a.selected {
+	background: #333;
+	color: #FDF8F4;
+}
+
+article h3 {
+	color: #999999;
+  font-size: 1.25em;
+  font-variant: small-caps;
+  letter-spacing: 0.2em;
+  margin: 1.5em 0 0;
+  text-transform: lowercase;
+}
+
+article h4 {
+	margin: 0.5em 0;
+	text-transform: capitalize;
+}
+
+article ul {
+	list-style: disc inside;
+	margin: 20px 30px;
+}
+
+article p.single, h3.single {
+	margin: 1.5em 0 20px;
+}
+
+dl { display:list-item; list-style-type:disc; margin:0 45px; }
+dt { display:inline-table; width:200px; line-height:1em; }
+dd { display:inline; font-style:italic; }
+
+.gallery, footer h3 {
+	margin: 1.5em 0 1em;
+}
+
+.gallery { margin: 2em 0 0.5em; }
+.projects h3 { margin: 0 0 1em; }
+
+header { min-height:200px; }
+
+.resume p .header { /*margin-bottom:5px;*/ display:block; }
+.resume p em span { float:right; color:#999; }
+
+
+blockquote {
+	background: none repeat scroll 0 0 #F6EFE1;
+  border-left: 1em solid #F5DFAC;
+  font-size: 1.0em;
+  font-style: italic;
+  margin: 0 1em 1.5em;
+  padding: 1.5em 2em;
+}
+
+blockquote cite {
+	display: block;
+  font-size: 0.8em;
+  font-style: normal;
+  font-weight: bold;
+  text-align: right;
+}
+
+abbr {
+	font-variant: small-caps;
+  font-weight: bold;
+  text-transform: lowercase;
+}
+
+article p acronym, article p abbr {
+	border-bottom: 1px dotted #333333;
+}
+
+.gallery figure {
+	text-align: center;
+	font-weight: bold;
+	width:368px;
+	float: left;
+	padding-bottom:2em;
+  margin: 0;
+}
+
+.gallery figure.right {
+	float:right;
+}
+
+.gallery figure cite {
+	font-weight: normal;
+	display:block;
+}
+
+.gallery figure img, .thumbnail {
+	border:1px solid #ccc;
+}
+
+/* about */
+.about h3 { margin-top:0; }
+
+.secondary h3 { margin-top:0; }
+
+/* nav show/hide */
+.content nav .phone { display:none; }
+.content footer nav { bottom: 2.5em; top:auto; right:0em; }
+
+
+
+/*  print  */
+
+@media print {
+	.content { padding:0; }
+
+	.content nav .nav { display:none; }
+	.content nav .phone { display:inline; font-weight:bold; }
+	.content nav { top:2.5em;}
+
+	header { min-height:0; }
+	header .thumbnail { display:none; }
+
+	.about h3 { margin-top:1.5em; }
+}
+
+/* magnific popup */
+
+/* padding-bottom and top for image */
+.mfp-no-margins img.mfp-img {
+  padding: 0;
+}
+/* position of shadow behind the image */
+.mfp-no-margins .mfp-figure:after {
+  top: 0;
+  bottom: 0;
+}
+/* padding for main container */
+.mfp-no-margins .mfp-container {
+  padding: 0;
+}
+
+button.mfp-close {
+  color: #333;
+}
