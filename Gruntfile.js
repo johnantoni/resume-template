@@ -14,47 +14,47 @@ module.exports = function(grunt) {
 
   grunt.initConfig({
     clean: {
-      img: ['htdocs/img/'],
-      css: ['htdocs/css/*.css'],
-      js: ['htdocs/js/*.js']
+      img: ['docs/img/'],
+      css: ['docs/css/*.css'],
+      js: ['docs/js/*.js']
     },
     concat: {
       options: {
         separator: ';',
       },
       cssLib: {
-        src: ['bower_components/normalize-css/normalize.css',
-              'bower_components/magnific-popup/dist/magnific-popup.css'],
-        dest: 'htdocs/css/lib.css',
+        src: ['node_modules/normalize-css/normalize.css',
+              'node_modules/magnific-popup/dist/magnific-popup.css'],
+        dest: 'docs/css/lib.css',
       },
       css: {
         src: ['css/theme.css',
               'css/app.css'],
-        dest: 'htdocs/css/app.css',
+        dest: 'docs/css/app.css',
       },
       jsLib: {
-        src: ['bower_components/jquery/dist/jquery.js',
-              'bower_components/jquery-easing/jquery.easing.js',
-              'bower_components/jquery-mousewheel/jquery.mousewheel.js',
-              'bower_components/jquery.scrollTo/jquery.scrollTo.js', 
-              'bower_components/magnific-popup/dist/jquery.magnific-popup.js'],
-        dest: 'htdocs/js/lib.js',
+        src: ['node_modules/jquery/dist/jquery.js',
+              'node_modules/jquery-easing/jquery.easing.js',
+              'node_modules/jquery-mousewheel/jquery.mousewheel.js',
+              'node_modules/jquery.scrollTo/jquery.scrollTo.js',
+              'node_modules/magnific-popup/dist/jquery.magnific-popup.js'],
+        dest: 'docs/js/lib.js',
       },
       js: {
         src: ['js/app.js'],
-        dest: 'htdocs/js/app.js',
+        dest: 'docs/js/app.js',
       },
       ie: {
-        src: ['js/ie/html5shiv.js', 
+        src: ['js/ie/html5shiv.js',
               'js/ie/respond.min.js'],
-        dest: 'htdocs/js/ie.js',
+        dest: 'docs/js/ie.js',
       }
     },
     copy: {
       fonts: {
         expand: true,
         src: 'fonts/*',
-        dest: 'htdocs/',
+        dest: 'docs/',
       }
     },
     cssmin: {
@@ -64,17 +64,17 @@ module.exports = function(grunt) {
       },
       target: {
         files: {
-          'htdocs/css/app.min.css': ['htdocs/css/app.css'],
-          'htdocs/css/lib.min.css': ['htdocs/css/lib.css']
+          'docs/css/app.min.css': ['docs/css/app.css'],
+          'docs/css/lib.min.css': ['docs/css/lib.css']
         }
       }
-    },        
+    },
     uglify: {
       main: {
         files: {
-          'htdocs/js/lib.min.js': ['htdocs/js/lib.js'],
-          'htdocs/js/app.min.js': ['htdocs/js/app.js'],
-          'htdocs/js/ie.min.js': ['htdocs/js/ie.js']
+          'docs/js/lib.min.js': ['docs/js/lib.js'],
+          'docs/js/app.min.js': ['docs/js/app.js'],
+          'docs/js/ie.min.js': ['docs/js/ie.js']
         }
       }
     },
@@ -87,7 +87,7 @@ module.exports = function(grunt) {
         files: [{
           expand: true,                  // Enable dynamic expansion
           src: ['img/**/*.{png,jpg,gif,svg,mp4,ogv,webm}'],   // Actual patterns to match
-          dest: 'htdocs'                  // Destination path prefix
+          dest: 'docs'                  // Destination path prefix
         }]
       },
       slow: {                         // Another target
@@ -98,35 +98,25 @@ module.exports = function(grunt) {
         files: [{
           expand: true,                  // Enable dynamic expansion
           src: ['img/**/*.{png,jpg,gif,svg,mp4,ogv,webm}'],   // Actual patterns to match
-          dest: 'htdocs'                  // Destination path prefix
+          dest: 'docs'                  // Destination path prefix
         }]
       }
     },
-    // rename: {
-    //   main: {
-    //     files: [
-    //       {src: ['htdocs/_img'], dest: 'htdocs/img'},
-    //     ]
-    //   }
-    // },
-    // watch: {
-    //   styles: {
-    //     files: ['js/*',
-    //             'styl/*',
-    //             'styl/base/*',
-    //             'styl/modules/*',
-    //             'styl/pages/*',
-    //             'htdocs/*.php'],
-    //     tasks: ['clean', 'stylus', 'concat'],
-    //     options: {
-    //       interrupt : true,
-    //       atBegin : true,
-    //       livereload : true
-    //     }
-    //   }
-    // }
+    watch: {
+      styles: {
+        files: ['js/*',
+                'css/*'],
+        tasks: ['source'],
+        options: {
+          interrupt : true,
+          atBegin : true,
+          livereload : true
+        }
+      }
+    }
   });
 
   grunt.registerTask('default', ['concat', 'copy', 'cssmin', 'uglify', 'newer:imagemin:quick']);
+  grunt.registerTask('source', ['concat', 'copy', 'cssmin', 'uglify']);
   grunt.registerTask('optim', ['clean:img', 'imagemin:slow']);
 };

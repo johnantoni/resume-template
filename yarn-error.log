@@ -1,0 +1,72 @@
+Arguments: 
+  /usr/local/Cellar/node/8.6.0/bin/node /usr/local/Cellar/yarn/1.1.0/libexec/bin/yarn.js init
+
+PATH: 
+  /Users/john/.rbenv/shims:/usr/local/share/git-core/contrib/diff-highlight:/Users/john/.dotfiles/.bin:/usr/local/var:/usr/local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+
+Yarn version: 
+  1.1.0
+
+Node version: 
+  8.6.0
+
+Platform: 
+  darwin x64
+
+npm manifest: 
+  {
+    "name": "johnantoni",
+    "version": "1.0.0",
+    "main": "Gruntfile.js",
+    "scripts": {
+      "test": "none"
+    },
+    "author": "john griffiths",
+    "license": "UNLICENSED",
+    "devDependencies": {
+      "autoprefixer-stylus": "^0.9.3",
+      "grunt": "^0.4.5",
+      "grunt-cli": "",
+      "grunt-contrib-clean": "^1.0.0",
+      "grunt-contrib-concat": "^1.0.1",
+      "grunt-contrib-copy": "^1.0.0",
+      "grunt-contrib-cssmin": "^1.0.1",
+      "grunt-contrib-imagemin": "^1.0.1",
+      "grunt-contrib-stylus": "^1.2.0",
+      "grunt-contrib-uglify": "^1.0.1",
+      "grunt-contrib-watch": "^1.0.0",
+      "grunt-newer": "^1.2.0",
+      "grunt-shell": "~0.6.1",
+      "load-grunt-tasks": "^0.4.0",
+      "time-grunt": "^0.3.1"
+    },
+    "repository": {
+      "type": "git",
+      "url": "git+ssh://git@uxgent.link:johnantoni-perch.git"
+    },
+    "homepage": "http://johnantoni.com",
+    "description": "johnantoni site",
+    "dependencies": {
+      "bower": "^1.7.9",
+      "grunt-contrib-rename": "0.0.3"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
+
+Trace: 
+  Error: canceled
+      at Interface.<anonymous> (/usr/local/Cellar/yarn/1.1.0/libexec/lib/cli.js:119877:13)
+      at emitNone (events.js:105:13)
+      at Interface.emit (events.js:207:7)
+      at Interface._ttyWrite (readline.js:775:16)
+      at ReadStream.onkeypress (readline.js:160:10)
+      at emitTwo (events.js:125:13)
+      at ReadStream.emit (events.js:213:7)
+      at emitKeys (internal/readline.js:420:14)
+      at emitKeys.next (<anonymous>)
+      at ReadStream.onData (readline.js:1011:36)
